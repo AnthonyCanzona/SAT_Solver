@@ -12,8 +12,8 @@ public:
     std::string getValue() const override { return value ? Keywords::TRUE : Keywords::FALSE; }
     std::shared_ptr<Expr> getLeft() const override { return nullptr; }
     std::shared_ptr<Expr> getRight() const override { return nullptr; }
-    std::shared_ptr<Expr> toNANDExpr() const override { return nullptr; }
-    std::string toString() const override { return getValue(); }
+    std::shared_ptr<Expr> toNANDExpr() const override;
+    std::string toString() const override;
 
 private:
     bool value;

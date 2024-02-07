@@ -13,7 +13,7 @@ public:
     std::string getValue() const override { return Keywords::NAND; }
     std::shared_ptr<Expr> getLeft() const override { return left; }
     std::shared_ptr<Expr> getRight() const override { return right; }
-    std::shared_ptr<Expr> toNANDExpr() const override { return std::make_shared<NANDExpr>(left, right); }
+    std::shared_ptr<Expr> toNANDExpr() const override;
 
 private:
     std::shared_ptr<Expr> left;
