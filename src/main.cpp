@@ -11,7 +11,7 @@ int main() {
         std::shared_ptr<Expr> nandExpression = parsedExpression->toNANDExpr();
 
         std::cout << "Original Expression: " << booleanExpression << std::endl;
-        std::cout << "Parsed Form: " << nandExpression->toString() << std::endl;
+        std::cout << "Parsed Form: " << parsedExpression->toString() << std::endl;
         std::cout << "NAND Form: " << nandExpression->toString() << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
