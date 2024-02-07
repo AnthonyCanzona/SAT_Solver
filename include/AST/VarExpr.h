@@ -1,22 +1,22 @@
-#ifndef CONST_EXPR_H
-#define CONST_EXPR_H
+#ifndef VAR_EXPR_H
+#define VAR_EXPR_H
 
 #include "Expr.h"
 
-class ConstExpr;
+class VarExpr;
 
-class ConstExpr : public Expr {
+class VarExpr : public Expr {
 public:
-    ConstExpr(bool value) : value(value) {}
+    VarExpr(std::string name) : name(name) {}
 
-    std::string getValue() const override { return value ? Keywords::TRUE : Keywords::FALSE; }
+    std::string getValue() const override { return name; }
     std::shared_ptr<Expr> getLeft() const override { return nullptr; }
     std::shared_ptr<Expr> getRight() const override { return nullptr; }
     std::shared_ptr<Expr> toNANDExpr() const override { return nullptr; }
     std::string toString() const override { return getValue(); }
 
 private:
-    bool value;
+    std::string name;
 };
 
 #endif

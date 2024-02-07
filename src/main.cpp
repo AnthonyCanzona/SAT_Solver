@@ -1,13 +1,14 @@
+#include <iostream>
 #include "../include/BooleanParser.h"
 
 int main() {
 
-    BooleanParser booleanParser;
     std::string booleanExpression = "(A AND B) OR (NOT C)";
+    BooleanParser booleanParser = BooleanParser(booleanExpression);
 
     try {
-        auto parsedExpression = booleanParser.parse(booleanExpression);
-        auto nandExpression = parsedExpression->toNANDExpr();
+        std::shared_ptr<Expr> parsedExpression = booleanParser.parse();
+        std::shared_ptr<Expr> nandExpression = parsedExpression->toNANDExpr();
 
         std::cout << "Original Expression: " << booleanExpression << std::endl;
         std::cout << "Parsed Form: " << nandExpression->toString() << std::endl;

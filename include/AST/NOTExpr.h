@@ -10,7 +10,7 @@ class NOTExpr : public Expr {
 public:
     NOTExpr(const std::shared_ptr<Expr>& operand) : operand(operand) {}
 
-    std::string getValue() const override { return Constants::NOT; }
+    std::string getValue() const override { return Keywords::NOT; }
     std::shared_ptr<Expr> getLeft() const override { return operand; }
     std::shared_ptr<Expr> getRight() const override { return nullptr; }
     std::shared_ptr<Expr> toNANDExpr() const override;
